@@ -18,10 +18,10 @@
 
 int	ft_printf(const char *s, ...);
 
-t_list	va_list  
+typedef struct va_list
 {
-	
-
-}
+	void			*content;
+	struct s_list	*next;
+}	args;
 
 #endif
