@@ -18,4 +18,10 @@
 
 int	ft_printf(const char *s, ...);
 
+t_list	va_list  
+{
+	
+
+}
+
 #endif
