@@ -50,7 +50,7 @@ int	ft_printf(const char *s, ...)
 	lenght = 0;
 	while (*(str + index))
 	{
-		if (*(str + index) == '%' == '%' && ft_strchr("csppdiuxX%",
+		if (*(str + index) == '%' && ft_strchr("csppdiuxX%",
 				*(s + index + 1)))
 		{
 			length += ft_format(args, *(s + index + 1));
