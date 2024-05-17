@@ -11,8 +11,23 @@
 /* ************************************************************************** */
 #include "ft_printf.h" 
 
-int ft_puthexa(unsigned long n, char format)
+char *ft_puthexa(unsigned long n, char format)
 {
-	
+	int index;
+	int temp;
+	char *pt;
 
+	index = 0;
+	temp = 0;
+	while (n)
+	{
+		temp = n % 16;
+		if (temp < 10)
+			temp = temp + '0'
+		else
+			temp = temp + 'A' - 10;
+		pt[i++] = temp;
+		n = n / 16;
+	}
+	return (pt);
 }
