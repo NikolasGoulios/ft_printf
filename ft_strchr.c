@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/14 11:03:05 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/05/14 11:03:07 by ngoulios         ###   ########.fr       */
+/*   Created: 2024/05/17 10:35:08 by ngoulios          #+#    #+#             */
+/*   Updated: 2024/05/17 10:35:10 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+char	*ft_strchr(const char *s, int c)
+{
+	unsigned char	lc ;
 
-# include <stdarg.h>
-# include <stdlib.h>
-# include <string.h>
-
-int	ft_printf(const char *s, ...);
-void	ft_putnbr_fd(int n, int fd);
-void	ft_putstr(char *str);
-char	*ft_itoa_unsigned(unsigned int n);
-
-
-#endif
+	lc = (unsigned char)c;
+	while (*s)
+	{
+		if (*s == lc)
+			return ((char *) s);
+		s++;
+	}
+	if (lc == '\0')
+		return ((char *) s);
+	return (0);
+}

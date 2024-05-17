@@ -21,7 +21,7 @@ static int	ft_format(va_list args, const char format)
 	else if (format == 's')
 		return (ft_putstr((va_arg(args, char *))));
 	else if (format == 'd' || format == 'i')
-		return (ft_putnbr((va_arg(args, int))));
+		return (ft_putnbr_fd((va_arg(args, int))));
 	else if (format == 'X' || format == 'x')
 		return (ft_puthexa(va_arg(args, unsigned int), format));
 	else if (format == 'p')
@@ -32,7 +32,7 @@ static int	ft_format(va_list args, const char format)
 		return (ft_putstr("0x0"));
 	}
 	else if (format == 'u')
-		return (ft_putunsigned(va_arg(args, unsigned int)));
+		return (ft_itoa_unsigned(va_arg(args, unsigned int)));
 	else if (format == '%')
 		return (ft_putchar('%'));
 	else
