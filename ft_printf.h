@@ -10,18 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifdef FT_PRINTF_H
+#ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
 # include <stdarg.h>
-# include <libft.h>
+# include <stdlib.h>
+# include <string.h>
 
 int	ft_printf(const char *s, ...);
-
-typedef struct va_list
-{
-	void			*content;
-	struct s_list	*next;
-}	args;
 
 #endif
