@@ -6,14 +6,17 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 11:44:11 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/05/18 13:11:13 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/05/18 13:32:17 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 int	ft_putunsigned(unsigned int n)
 {
+	int	count;
+
+	count = 0;
 	if (n > 9)
 		{
 			count += ft_putunsigned(n / 10);

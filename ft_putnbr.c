@@ -6,11 +6,11 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 09:49:30 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/05/18 13:15:40 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/05/18 13:31:32 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 int	ft_putnbr(int n)
 {
@@ -18,7 +18,7 @@ int	ft_putnbr(int n)
 
 	count = 0;
 	if (n == -2147483648)
-		count =+ ft_putstr("-2147483648");
+		count += ft_putstr("-2147483648");
 	else if (n < 0)
 	{
 		if (write(1, "-", 1) == -1)
