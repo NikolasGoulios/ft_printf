@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 11:51:49 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/05/17 09:49:18 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/05/18 13:14:15 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	ft_format(va_list args, const char format)
 	else if (format == 's')
 		return (ft_putstr((va_arg(args, char *))));
 	else if (format == 'd' || format == 'i')
-		return (ft_putnbr_fd((va_arg(args, int))));
+		return (ft_putnbr((va_arg(args, int))));
 	else if (format == 'X' || format == 'x')
 		return (ft_puthexa(va_arg(args, unsigned int), format));
 	else if (format == 'p')
@@ -32,7 +32,7 @@ static int	ft_format(va_list args, const char format)
 		return (ft_putstr("0x0"));
 	}
 	else if (format == 'u')
-		return (ft_itoa_unsigned(va_arg(args, unsigned int)));
+		return (ft_putunsigned(va_arg(args, unsigned int)));
 	else if (format == '%')
 		return (ft_putchar('%'));
 	else
@@ -50,7 +50,7 @@ int	ft_printf(const char *s, ...)
 	lenght = 0;
 	while (*(str + index))
 	{
-		if (*(str + index) == '%' && ft_strchr("csppdiuxX%",
+		if (*(str + index) == '%' && ft_strchr("cspdiuxX%",
 				*(s + index + 1)))
 		{
 			length += ft_format(args, *(s + index + 1));
@@ -59,6 +59,8 @@ int	ft_printf(const char *s, ...)
 		else
 			lenght += ft_putchar(*(s + index));
 		index++;
+		if (length == -1)
+		return (-1);
 	}
 	va_end(args);
 	return (length);

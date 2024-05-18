@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putunsigned.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/14 11:03:05 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/05/18 13:17:24 by ngoulios         ###   ########.fr       */
+/*   Created: 2024/05/18 11:44:11 by ngoulios          #+#    #+#             */
+/*   Updated: 2024/05/18 13:11:13 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft.h"
 
-# include <stdarg.h>
-# include <stdlib.h>
-# include <string.h>
+int	ft_putunsigned(unsigned int n)
+{
+	if (n > 9)
+		{
+			count += ft_putunsigned(n / 10);
+			if (count == -1)
+				return (-1);
+			count += ft_putchar(n % 10 + 48);
+		}
+		else
+			count += ft_putchar(n + 48);
+	if (count == -1)
+		return (-1);
+	return (count);
 
-int     ft_printf(const char *s, ...);
-int     ft_putnbr(int n);
-int     ft_putstr(char *str);
-int     ft_putunsigned(unsigned int n);
-char	*ft_strchr(const char *s, int c);
-int     ft_putchar(int n);
-int     ft_puthexa(unsigned long n, char format);
-
-
-#endif
+}

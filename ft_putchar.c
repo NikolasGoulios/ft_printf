@@ -1,41 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/17 09:49:30 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/05/17 09:49:32 by ngoulios         ###   ########.fr       */
+/*   Created: 2024/04/28 19:27:48 by ngoulios          #+#    #+#             */
+/*   Updated: 2024/05/18 12:22:08 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-void	ft_putnbr_fd(int n, int fd)
+int	ft_putchar(char c)
 {
-	int	digit;
-
-	digit = 0;
-	if (n == -2147483648)
-		write(fd, "-2147483648", 11);
-	else if (n < 0)
-	{
-		write(fd, "-", 1);
-		n = -n;
-		ft_putnbr_fd(n, fd);
-	}
-	else
-	{
-		if (n > 9)
-		{
-			ft_putnbr_fd(n / 10, fd);
-			ft_putnbr_fd(n % 10, fd);
-		}
-		else
-		{
-			digit = n + 48;
-			write(fd, &digit, 1);
-		}
-	}
+	if (write(1, &c, 1) == -1)
+		return (-1);
+	return (1)
 }
