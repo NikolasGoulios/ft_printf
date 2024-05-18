@@ -6,7 +6,7 @@
 #    By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/17 11:20:16 by ngoulios          #+#    #+#              #
-#    Updated: 2024/05/18 12:45:01 by ngoulios         ###   ########.fr        #
+#    Updated: 2024/05/18 13:20:20 by ngoulios         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,12 @@ CC = cc
 FLAGS = -Wall -Werror -Wextra
 
 SRC = ft_printf.c /
-      ft_putchar.c 
+      ft_putchar.c /
+	  ft_puthexa.c /
+	  ft_putnbr.c /
+	  ft_putstr.c /
+	  ft_putunsigned.c /
+	  ft_strchr.c 
 
 OBJECTS = $(SRC:.c=.O)
 
