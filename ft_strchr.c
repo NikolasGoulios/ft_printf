@@ -6,11 +6,11 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 10:35:08 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/05/18 13:14:43 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/05/19 15:02:33 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *s, int c)
+int	ft_strchr(const char *s, int c)
 {
 	unsigned char	lc ;
 
@@ -18,10 +18,12 @@ char	*ft_strchr(const char *s, int c)
 	while (*s)
 	{
 		if (*s == lc)
-			return ((char *) s);
+			return (1);
 		s++;
 	}
 	if (lc == '\0')
-		return ((char *) s);
+		return (0);
+	else 
+		return (-1);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 11:51:49 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/05/18 13:26:30 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/05/19 15:15:46 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,26 +39,25 @@ static int	ft_format(va_list args, char format)
 		return (-1);
 }
 
-int	ft_printf(const char *s, ...)
+int	ft_printf(const char *str, ...)
 {
 	va_list	args;
-	int		index;
+	int		i;
 	int		length;
 
-	va_start(args, s);
-	index = 0;
+	va_start(args, str);
+	i = 0;
 	length = 0;
-	while (*(s + index))
+	while (str[i])
 	{
-		if (*(s + index) == '%' && ft_strchr("cspdiuxX%",
-				*(s + index + 1)))
+		if (str[i] == '%')
 		{
-			length += ft_format(args, *(s + index + 1));
-			index++;
+			length += ft_format(args, str[i + 1]);
+			i++;
 		}
 		else
-			length += ft_putchar(*(s + index));
-		index++;
+			length += ft_putchar(str[i]);
+		i++;
 		if (length == -1)
 		return (-1);
 	}
