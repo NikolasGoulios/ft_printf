@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 09:49:30 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/05/20 10:45:14 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/05/20 12:48:59 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_putnbr(int n)
 		if (write(1, "-", 1) == -1)
 			return (-1);
 		n = -n;
-		count += ft_putnbr(n) + 1; // + 1 for the  (-) sign. 
+		count += ft_putnbr(n) + 1;
 	}
 	else if (n > 9)
 	{
