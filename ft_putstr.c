@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 09:49:41 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/05/18 12:51:41 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/05/20 10:26:24 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_putstr(char *str)
 {
 	int	i;
-	int count;
+	int	count;
 
 	i = 0;
 	count = 0;

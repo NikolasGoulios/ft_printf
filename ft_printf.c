@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 11:51:49 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/05/19 15:15:46 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/05/20 10:57:10 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	ft_format(va_list args, char format)
 {
-	//void	*ptr;
+	void	*ptr;
 
 	if (format == 'c')
 		return (ft_putchar((va_arg(args, int))));
@@ -24,13 +24,13 @@ static int	ft_format(va_list args, char format)
 		return (ft_putnbr((va_arg(args, int))));
 	else if (format == 'X' || format == 'x')
 		return (ft_puthexa(va_arg(args, unsigned int), format));
-	/*else if (format == 'p')
+	else if (format == 'p')
 	{
 		ptr = va_arg(args, void *);
 		if (ptr)
 			return (ft_putaddress(ptr));
 		return (ft_putstr("0x0"));
-	}*/
+	}
 	else if (format == 'u')
 		return (ft_putunsigned(va_arg(args, unsigned int)));
 	else if (format == '%')
@@ -50,7 +50,7 @@ int	ft_printf(const char *str, ...)
 	length = 0;
 	while (str[i])
 	{
-		if (str[i] == '%')
+		if (str[i] == '%') // input secure for correct characters ft_strchr.c 
 		{
 			length += ft_format(args, str[i + 1]);
 			i++;
@@ -59,7 +59,7 @@ int	ft_printf(const char *str, ...)
 			length += ft_putchar(str[i]);
 		i++;
 		if (length == -1)
-		return (-1);
+			return (-1);
 	}
 	va_end(args);
 	return (length);

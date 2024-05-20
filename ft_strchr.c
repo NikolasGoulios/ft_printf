@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 10:35:08 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/05/19 15:02:33 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/05/20 10:28:37 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_strchr(const char *s, int c)
 	}
 	if (lc == '\0')
 		return (0);
-	else 
+	else
 		return (-1);
 	return (0);
 }
