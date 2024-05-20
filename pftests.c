@@ -2,11 +2,11 @@
 #include "ft_printf.h"
 int main()
 {
-    int value = 27;
+    //int value = 27;
     //char text = "Nikolas Goulios";
     
-    ft_printf("Value: %d, Text: %s\n", value, "Nikolas Goulios");
-    printf("Value: %d, Text: %s\n", value, "Nikolas Goulios");
+    ft_printf("Value: %d, Text: %s\n", 27, "Nikolas Goulios");
+    printf("Value: %d, Text: %s\n", 27, "Nikolas Goulios");
     
     return (0);
 }
