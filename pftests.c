@@ -21,7 +21,7 @@ int main()
 
 int ft_putchar(char c)
 {
-    printf("Printing character: '%c' (ASCII: %d)\n", c, (int)c); // Debug print
+    printf("Printing character: '%c' (ASCII: %d)\n", c, (int)c);
     if (write(1, &c, 1) == -1)
         return (-1);
     return (1);
