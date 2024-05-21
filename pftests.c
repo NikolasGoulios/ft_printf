@@ -7,6 +7,13 @@ int main()
     
     ft_printf("Value: %d, Text: %s\n", 27, "Nikolas Goulios");
     printf("Value: %d, Text: %s\n", 27, "Nikolas Goulios");
+    ft_printf("%x, %X", 42, 42);
+    ft_printf("%x, %X", 0, 0);
+    ft_printf("%x, %X", 1500, 1500);
+    printf("%x, %X", 42, 42);
+    printf("%x, %X", 0, 0);
+    printf("%x, %X", 1500, 1500);
+    ft_printf("%", 1500, 1500);
     
     return (0);
 }
