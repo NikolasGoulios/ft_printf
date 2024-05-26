@@ -6,11 +6,11 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 10:35:08 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/05/20 10:28:37 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/05/25 18:57:42 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strchr(const char *s, int c)
+int	ft_strchr(const char *s, int c) // Delete this function
 {
 	unsigned char	lc ;
 

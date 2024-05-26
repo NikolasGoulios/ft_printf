@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 11:51:49 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/05/22 11:57:13 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/05/25 18:58:45 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	ft_printf(const char *str, ...)
 	{
 		if (str[i] == '%')
 		{
-			length += ft_format(args, str[i + 1]);
+			length += ft_format(args, str[i + 1]);// constantly updating the lenght istead of overight it.
 			i++;
 		}
 		else
